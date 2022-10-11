@@ -1,4 +1,5 @@
-// std::iota 
+// std::iota  Store increasing sequence 
+
 #include <iostream> // std::cout 
 #include <numeric> // std::iota 
   
