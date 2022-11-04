@@ -7,16 +7,21 @@ procedure Solution_1(n, G) {
     Input:  Graph G = (V, E), undirected; vertex v ∈ V; n is the number of vertex in G
     Output: the number of pairs of different nodes that are unreachable from rach other
 
+    // find the neighbors of each node
     g = [[], [], ... , []] (list containing n lists)
     for all edges(u, w) ∈ E:
         g[u].push_back(w)
         g[w].push_back(u)
-    seen = [0,0, ... ,0] (list containing n 0s)
+
+    
+    seen = [0,0, ... ,0] (list containing n 0s) // to record which node we don't visit
     ans = 0
     counter = 0 (Global Variable)
 
     for i=0 upon n:
-        if(seen[i]++) continue
+        if(seen[i]++) continue 
+
+        // if the node we have never visited, do dfs
         counter = 0
         dfs(i)
         ans += (n-counter) * counter
@@ -29,6 +34,7 @@ procedure dfs(v){
 
     counter++;
     for all edges(v, u) in E:
+        // if the node we have never visited, do dfs
         if(seen[u]++ == 0) dfs(u)
 }
 ```

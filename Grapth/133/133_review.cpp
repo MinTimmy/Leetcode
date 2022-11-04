@@ -26,20 +26,19 @@ public:
 class Solution {
 public:
     Node* cloneGraph(Node* node) {
-        if (!node) return  nullptr; // if the inpurt is NULL, return nullptr
-        std::unordered_map<Node*, Node*> m; // the answer graph we will creat
+        if(!node) return nullptr;
+        std::unordered_map<Node* ,Node* > m;
         std::function<void(Node*)> dfs = [&](Node* u){
             m[u] = new Node(u->val);
             for (Node* v : u->neighbors){
-                if(!m.count(v)) dfs(v); // if we find the node v in m, we do dfs
-                m[u]->neighbors.push_back(m[v]);
+                if(!m.count(v)) dfs(v);
+                m[v]->neighbors.push_back(v);
             }
         };
         dfs(node);
-        return m[node];     
+        return m[node];
     }
 };
-
 
 int main()
 {
