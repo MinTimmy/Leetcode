@@ -38,3 +38,11 @@ https://vim.fandom.com/wiki/Inserting_text_in_multiple_lines
 * <mark>: s/^/new text /</mark>	     Insert "new text " at the beginning of the line.
 * <mark>: s/$/ new text/</mark>	 Append " new text" to the end of the line.
 * <mark>: s/green/bright &/g</mark>	Replace each "green" with "bright green" in the line.
+
+
+# insert spaces/tabs in text
+```
+Regular space: &nbsp;
+Two spaces gap: &ensp;
+Four spaces gap: &emsp;
+```
